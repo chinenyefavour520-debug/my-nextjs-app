@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+/* ── Font variables ─────────────────────────────────────────────────────── */
+:root {
+  --font-playfair:   'Playfair Display', Georgia, serif;
+  --font-cormorant:  'Cormorant Garamond', Georgia, serif;
+  --font-inter:      'Inter', system-ui, sans-serif;
+}
+
+/* ── Base ───────────────────────────────────────────────────────────────── */
+body {
+  font-family: var(--font-inter);
+  background-color: #f9fafb;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Font utilities ─────────────────────────────────────────────────────── */
+.font-playfair  { font-family: var(--font-playfair); }
+.font-cormorant { font-family: var(--font-cormorant); }
+.font-inter     { font-family: var(--font-inter); }
+
+/* ── Layout helpers ─────────────────────────────────────────────────────── */
+.container-custom {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 640px)  { .container-custom { padding-left: 1.5rem; padding-right: 1.5rem; } }
+@media (min-width: 1024px) { .container-custom { padding-left: 2rem;   padding-right: 2rem;   } }
+
+/* ── Reusable component classes ─────────────────────────────────────────── */
+.btn-primary {
+  background-color: #db2777;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: background-color 0.2s, opacity 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-primary:hover { background-color: #be185d; }
+
+.btn-secondary {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+.btn-secondary:hover { background-color: #e5e7eb; }
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  background-color: #f9fafb;
+  outline: none;
+  transition: all 0.2s;
+}
+.input-field:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #f9a8d4;
+  background-color: #fff;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 1rem;
+  border: 1px solid #f3f4f6;
+  overflow: hidden;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.card:hover {
+  box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.08);
+  border-color: #fce7f3;
+}
+
+/* ── Scrollbar hide utility ─────────────────────────────────────────────── */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Luxury text sizes ──────────────────────────────────────────────────── */
+.text-display {
+  font-family: var(--font-playfair);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.text-headline {
+  font-family: var(--font-playfair);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+.text-subheading {
+  font-family: var(--font-cormorant);
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
